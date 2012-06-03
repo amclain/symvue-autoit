@@ -313,20 +313,27 @@ Func RecallLightingScene($sceneToRecall)
    If $bringDaslightToFront = True Then
 	  ; Search for the white light beams on blue background icon above the second channel fader.
 	  ; If it doesn't exist, the wrong panel is active.
-	  $pixelCheck = PixelChecksum(34, 7, 54, 27, 1, ControlGetHandle("Daslight", "", "[CLASS:Static; INSTANCE:7]"))
-	  ConsoleWrite("Pixel Check: " & $pixelCheck & @LF)
-	  If $pixelCheck <> 420119405 Then
+	  $pixelCheck  = PixelChecksum(34, 7, 54, 27, 1, ControlGetHandle("Daslight", "", "[CLASS:Static; INSTANCE:7]"))
+	  ; Search for white after fader #8.
+	  $pixelCheck2 = PixelChecksum(245, 7, 265, 27, 1, ControlGetHandle("Daslight", "", "[CLASS:Static; INSTANCE:7]"))
+	  ConsoleWrite("Pixel Check:  " & $pixelCheck & "   " & $pixelCheck2 & @LF)
+	  If $pixelCheck <> 420119405 Or $pixelCheck2 <> 2712217121 Then
 		 ; Click the "Display only the fixtures" button.
+		 ; There are actually two different instances of the button depending on if you are on the "General Outputs"
+		 ; tab or the "PAR 64" tab.
 		 ConsoleWrite("Click." & @LF)
 		 ControlClick("Daslight Virtual Controller", "", "[CLASS:Button; INSTANCE:28]")
+		 ControlClick("Daslight Virtual Controller", "", "[CLASS:Button; INSTANCE:60]")
 		 Sleep(250) ; Give the screen time to refresh before the next check.
 	  EndIf
 	  ; Double check. If certain features are active it can take two clicks to get to the right panel.
 	  $pixelCheck = PixelChecksum(34, 7, 54, 27, 1, ControlGetHandle("Daslight", "", "[CLASS:Static; INSTANCE:7]"))
-	  ConsoleWrite("Pixel Check: " & $pixelCheck & @LF)
-	  If $pixelCheck <> 420119405 Then
+	  $pixelCheck2 = PixelChecksum(245, 7, 265, 27, 1, ControlGetHandle("Daslight", "", "[CLASS:Static; INSTANCE:7]"))
+	  ConsoleWrite("Pixel Check:  " & $pixelCheck & "   " & $pixelCheck2 & @LF)
+	  If $pixelCheck <> 420119405 Or $pixelCheck2 <> 2712217121 Then
 		 ConsoleWrite("Click." & @LF)
 		 ControlClick("Daslight Virtual Controller", "", "[CLASS:Button; INSTANCE:28]")
+		 ControlClick("Daslight Virtual Controller", "", "[CLASS:Button; INSTANCE:60]")
 	  EndIf
    EndIf
    
