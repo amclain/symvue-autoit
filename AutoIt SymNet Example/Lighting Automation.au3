@@ -225,9 +225,12 @@ Opt("PixelCoordMode", 0)
 
 ; The window title of our Daslight project.
 ; NOTE: The file extension doesn't show up in the title bar if file extensions are hidden
-; by the operating system.
-$daslightProject  = $daslightFileName
-$filePath = @WorkingDir & "\" & $daslightFileName & $daslightFileExt ; Absolute path to the Daslight project file.
+; by the operating system, so search for both strings.
+$daslightProject    = $daslightFileName & " - " & $daslight
+$daslightProjectExt = $daslightFileName & $daslightFileExt & " - " & $daslight
+
+; Absolute path to the Daslight project file.
+$filePath = @WorkingDir & "\" & $daslightFileName & $daslightFileExt
 
 ; This function recalls a lighting scene referenced in the "scene selection"
 ; section above.
@@ -240,7 +243,7 @@ Func RecallLightingScene($sceneToRecall)
    EndIf
    
    ; Check if Daslight is already running our project.
-   If WinExists($daslightProject) = 0 Then
+   If WinExists($daslightProject) = 0 And WinExists($daslightProjectExt) = 0 Then
    
 	  ; Our project is not running.
 	  ; Is another Daslight project open?
