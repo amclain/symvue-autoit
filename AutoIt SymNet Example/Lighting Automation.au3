@@ -143,7 +143,9 @@
    
  
  THIS SCRIPT WAS TESTED ON THE FOLLOWING PLATFORMS:
- Windows XP SP3 32-bit
+ Windows XP Professional SP3		(32-bit)
+ Windows XP Professional x64 SP2	(64-bit)
+ Windows 7  Professional SP1		(64-bit)
  
  ----------  LINKS  ----------
  
