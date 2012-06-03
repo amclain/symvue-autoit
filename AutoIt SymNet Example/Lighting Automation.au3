@@ -117,9 +117,6 @@
    the command buttons in SymVue to the recall preset executables on your
    computer. For some reason certain computers don't like relative paths
    in SymVue.
-   
-   Problem:  Daslight closes and relaunches on scene change.
-   Solution: 
  
  
  FILES:
@@ -192,7 +189,11 @@ $daslight = "Daslight Virtual Controller"
 ; that are opened from the shell (ShellExecute) show up in Daslight's title bar
 ; as the file's short name (MyProject.dvc becomes MyProj~1.dvc). This is something to keep
 ; in mind when searching its window title.
-$daslightFileName = "Lighting.dvc"
+$daslightFileName = "Lighting"
+
+; The extension is needed to open the file but doesn't show up in the application's title
+; bar if "show file extensions" is disabled in the operating system.
+$daslightFileExt  = ".dvc"
 
 ; Scene select button ID's
 $presenterButton	= "[CLASS:Button; INSTANCE:25]"
@@ -225,8 +226,8 @@ Opt("PixelCoordMode", 0)
 ; The window title of our Daslight project.
 ; NOTE: The file extension doesn't show up in the title bar if file extensions are hidden
 ; by the operating system.
-$daslightProject  = $daslightFileName & " - " & $daslight
-$filePath = @WorkingDir & "\" & $daslightFileName			; Absolute path to the Daslight project file.
+$daslightProject  = $daslightFileName
+$filePath = @WorkingDir & "\" & $daslightFileName & $daslightFileExt ; Absolute path to the Daslight project file.
 
 ; This function recalls a lighting scene referenced in the "scene selection"
 ; section above.
