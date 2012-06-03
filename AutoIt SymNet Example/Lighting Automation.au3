@@ -175,7 +175,8 @@
 ; on in the demonstration.
 ; When FALSE:
 ; This script behaves as it would in a production environment, controlling Daslight
-; behind the scenes while SymVue remains the window in focus.
+; behind the scenes while SymVue remains the window in focus. This disables Then
+; "Launching Daslight" splash screen.
 ;
 ; You'll need to recompile the executable scripts if you change this value.
 $bringDaslightToFront = True
@@ -272,17 +273,21 @@ Func RecallLightingScene($sceneToRecall)
    
 	  ; Daslight is not running.
 	  ConsoleWrite("Opening the Daslight project file:" & @LF)
-	  
 	  ConsoleWrite($filePath & @LF)
+	  
+	  If $bringDaslightToFront = True Then SplashTextOn($scriptName, "Launching Daslight...", 300, 200, -1, -1, 32, "", 16)
+	  
 	  ShellExecute($filePath) ; Use ShellExecute instead of Run because the operating system needs to reference which program can open the file.
 	  
 	  If WinWaitActive($daslight, "", 10) = 0 Then
+		 SplashOff()
 		 ConsoleWrite("Could not launch Daslight." & @LF)
 		 MsgBox("Could not launch Daslight.")
 	  Else
 		 ConsoleWrite("The Daslight project launched." & @LF)
+		 SplashOff()
 		 
-		 ; Click the splash screen to make it go away.
+		 ; Click the Daslight splash screen to make it go away.
 		 If WinWaitActive("[CLASS:SplashScreenExClass]", "", 3) <> 0 Then
 			ControlClick("[CLASS:SplashScreenExClass]", "", "")
 		 EndIf
