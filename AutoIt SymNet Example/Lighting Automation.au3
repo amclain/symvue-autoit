@@ -222,6 +222,7 @@ Const $sceneHouseLights	= 3
 ; http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOption.htm
 Opt("WinTitleMatchMode", 2)
 
+; Calculate pixel checksums relative to the defined window.
 ; http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOption.htm#PixelCoordMode
 Opt("PixelCoordMode", 0)
 
