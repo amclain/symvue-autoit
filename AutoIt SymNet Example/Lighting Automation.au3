@@ -105,8 +105,8 @@
    are compiled to executables (.exe) in the Tools -> Build (F7) menu, and linked
    to the lighting buttons in SymVue.
    
-   Messages from the scripts can be viewed by running the scripts in the editor
-   by clicking Tools -> Go (F5).
+   Messages from the scripts can be viewed by running the scripts in the SciTE
+   editor by clicking Tools -> Go (F5).
  
  
  KNOWN ISSUES:
