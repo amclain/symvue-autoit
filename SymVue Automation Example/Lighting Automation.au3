@@ -5,6 +5,8 @@
  
  Website:	 http://sourceforge.net/projects/symvue-autoit/
  
+ Video:		 http://www.youtube.com/watch?v=qp_YY7tIiCs
+ 
  Audience:	 Control system designers & programmers.
  
  Difficulty: Advanced
