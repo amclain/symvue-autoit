@@ -168,6 +168,12 @@
  AutoIt tutorials:
  http://www.autoitscript.com/autoit3/docs/
  
+ Article: Are my AutoIt EXEs really infected?
+ Some virus scanners trigger a false positive. If you don't want to download the
+ .exe files, you can build them yourself by opening the .au3 files in the SciTE
+ editor and pressing F7.
+ http://www.autoitscript.com/forum/topic/34658-are-my-autoit-exes-really-infected/
+ 
 #ce ----------------------------------------------------------------------------
 
 ; -- CONFIGURABLE OPTIONS --
