@@ -3,7 +3,9 @@
  SYMETRIX SYMVUE THIRD-PARTY SOFTWARE AUTOMATION EXAMPLE
  v1.0.0
  
- Audience:   Control system designers & programmers.
+ Website:	 http://sourceforge.net/projects/symvue-autoit/
+ 
+ Audience:	 Control system designers & programmers.
  
  Difficulty: Advanced
             (Intermediate if you have prior programming experience.)
