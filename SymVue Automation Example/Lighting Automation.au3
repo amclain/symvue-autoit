@@ -299,7 +299,7 @@ Func RecallLightingScene($sceneToRecall)
 		 SplashOff()
 		 
 		 ; Click the Daslight splash screen to make it go away.
-		 If WinWaitActive("[CLASS:SplashScreenExClass]", "", 5) <> 0 Then
+		 If WinWaitActive("[CLASS:SplashScreenExClass]", "", 10) <> 0 Then
 			ControlClick("[CLASS:SplashScreenExClass]", "", "")
 		 EndIf
 	  EndIf
