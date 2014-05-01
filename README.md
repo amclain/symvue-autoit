@@ -1,3 +1,13 @@
+# Symetrix SymVue Automation
+
+An example using Symetrix SymVue to control third-party applications.
+
+## Website
+
+[http://sourceforge.net/projects/symvue-autoit/](http://sourceforge.net/projects/symvue-autoit/)
+
+## Documentation
+
 ```c
 /*
  SYMETRIX SYMVUE THIRD-PARTY SOFTWARE AUTOMATION EXAMPLE
